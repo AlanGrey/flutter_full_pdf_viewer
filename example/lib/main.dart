@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:flutter_full_pdf_viewer/flutter_full_pdf_viewer.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -52,9 +52,9 @@ class _MyAppState extends State<MyApp> {
         child: RaisedButton(
           child: Text("Open PDF"),
           onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => PDFScreen(pathPDF)),
-          ),
+                context,
+                MaterialPageRoute(builder: (context) => PDFScreen(pathPDF)),
+              ),
         ),
       ),
     );
@@ -63,6 +63,7 @@ class _MyAppState extends State<MyApp> {
 
 class PDFScreen extends StatelessWidget {
   String pathPDF = "";
+
   PDFScreen(this.pathPDF);
 
   @override
@@ -79,4 +80,5 @@ class PDFScreen extends StatelessWidget {
         ),
         path: pathPDF);
   }
+//  PDFViewerWidget(path: pathPDF)
 }
